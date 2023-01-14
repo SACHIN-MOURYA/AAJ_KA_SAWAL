@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int firstBadVersion(int n) {
+      long long  int s=1,e=n,m,ans;
+        while(s<=n)
+        {
+            m=(s+n)/2;
+            if(isBadVersion(m))
+            {
+                ans=m;
+                n=m-1;
+            }
+            else
+            s=m+1;
+
+        }
+        return ans;
+    }
+};
